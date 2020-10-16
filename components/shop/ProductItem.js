@@ -1,7 +1,7 @@
 import React from 'react'
 import { Text, View, StyleSheet, Image, Button, TouchableOpacity, TouchableNativeFeedback, Platform } from 'react-native'
 
-import Colors from '../constants/Colors'
+import Colors from '../../constants/Colors'
 
 const ProductItem = props => {
     let TouchableCmp = TouchableOpacity
@@ -21,16 +21,7 @@ const ProductItem = props => {
                     <Text style={styles.price}>${props.item.price.toFixed(2)}</Text>
                 </View>
                 <View style={styles.actions}>
-                    <Button 
-                        color={Colors.primary} 
-                        title="View Details" 
-                        onPress={props.onView} 
-                    />
-                    <Button 
-                        color={Colors.primary} 
-                        title="To Cart"
-                        onPress={props.onAdd} 
-                    />
+                    {props.children}
                 </View>
             </View>
         </TouchableCmp>
